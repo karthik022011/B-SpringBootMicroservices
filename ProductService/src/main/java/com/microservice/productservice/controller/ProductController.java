@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("api/product")
+@RequestMapping("api/v1/product")
 @RestController
 public class ProductController {
 
@@ -21,8 +21,8 @@ public class ProductController {
       return new ResponseEntity<>(id, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<ProductDetailsResDTO> getProductById(@PathVariable("id") long productId) {
+    @GetMapping("/{productId}")
+    public ResponseEntity<ProductDetailsResDTO> getProductById(@PathVariable("productId") long productId) {
         ProductDetailsResDTO productDetailsResDTO = productService.getProductById(productId);
         return ResponseEntity.ok(productDetailsResDTO);
     }

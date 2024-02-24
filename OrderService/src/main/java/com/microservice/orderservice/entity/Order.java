@@ -8,17 +8,28 @@ import java.time.Instant;
 @Entity
 public class Order {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderId;
 
     @Column(name = "PRODUCT_ID")
     private long productId;
 
+    @Column(name = "PRODUCT_NAME")
+    private String productName;
+
     @Column(name = "ORDER_DATE")
     private Instant orderDate;
 
     @Column(name = "TOTAL_AMOUNT")
-    private long amount;
+    private long totalAmount;
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
     public long getOrderId() {
         return orderId;
@@ -44,11 +55,11 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public long getAmount() {
-        return amount;
+    public long getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setAmount(long amount) {
-        this.amount = amount;
+    public void setTotalAmount(long totalAmount) {
+        this.totalAmount = totalAmount;
     }
 }
