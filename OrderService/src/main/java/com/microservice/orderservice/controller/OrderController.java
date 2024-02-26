@@ -23,3 +23,8 @@ public class OrderController {
        return new ResponseEntity<>(orderId, HttpStatus.OK);
     }
 }
+
+//http://localhost:8082/api/v1/order
+/*{
+    "productId":1
+}*/

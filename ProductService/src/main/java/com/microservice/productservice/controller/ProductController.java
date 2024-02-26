@@ -27,3 +27,9 @@ public class ProductController {
         return ResponseEntity.ok(productDetailsResDTO);
     }
 }
+
+//http://localhost:8083/api/v1/product
+/*{
+    "productName":"Choclate",
+     "price":1
+}*/

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import java.time.Instant;
 
 @Entity
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,9 +17,6 @@ public class Order {
 
     @Column(name = "PRODUCT_NAME")
     private String productName;
-
-    @Column(name = "ORDER_DATE")
-    private Instant orderDate;
 
     @Column(name = "TOTAL_AMOUNT")
     private long totalAmount;
@@ -45,14 +43,6 @@ public class Order {
 
     public void setProductId(long productId) {
         this.productId = productId;
-    }
-
-    public Instant getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Instant orderDate) {
-        this.orderDate = orderDate;
     }
 
     public long getTotalAmount() {
